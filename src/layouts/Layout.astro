@@ -1,28 +1,39 @@
 ---
-import Nav from '../components/Nav.astro'
-import { ViewTransitions, fade } from 'astro:transitions'
-const { title } = Astro.props
+import Nav from "../components/Nav.astro"
+import {ViewTransitions, fade} from "astro:transitions"
+const {title} = Astro.props
 ---
 
 <!doctype html>
-<html lang="en" transition:animate={fade({ duration: '0.12s' })}>
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-		<script defer src="https://cdn.jsdelivr.net/npm/@imacrayon/alpine-ajax@0.4.3/dist/cdn.min.js"></script>
-		<ViewTransitions />
-		<style is:global>
-			html {
-				font-family: system-ui, sans-serif;
-			}
-		</style>
-	</head>
-	<body>
-		<Nav />
-		<slot />
-	</body>
+<html lang="en" transition:animate={fade({duration: "0.15s"})}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <!-- <script defer src="https://cdn.jsdelivr.net/npm/@imacrayon/alpine-ajax@0.4.3/dist/cdn.min.js"></script> -->
+    <!-- <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/focus@3/dist/cdn.min.js"></script> -->
+    <!-- <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/anchor@3/dist/cdn.min.js"> -->
+    </script>
+  </head>
 </html>
+
+<ViewTransitions />
+<style is:global>
+  html {
+    font-family: system-ui, sans-serif;
+  }
+  [x-cloak] {
+    @apply !hidden;
+  }
+  ::backdrop {
+    @apply bg-stone-500/50;
+  }
+</style>
+
+<body>
+  <Nav />
+  <slot />
+</body>

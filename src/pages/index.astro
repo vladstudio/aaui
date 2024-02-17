@@ -1,21 +1,59 @@
 ---
-import Layout from '../layouts/Layout.astro'
-import fs from 'node:fs'
-
-try {
-	fs.accessSync('/tmp/count.txt')
-} catch {
-	fs.writeFileSync('/tmp/count.txt', '0')
-}
-const count = fs.readFileSync('/tmp/count.txt', 'utf-8')
+import Layout from "../layouts/Layout.astro"
+import {Icon} from "astro-icon/components"
 ---
 
 <Layout title="Welcome to Astro.">
-	<div class="grid justify-start gap-8 p-8">
-		<h1>hihi</h1>
-		<hr />
-		<a href="/partials/clicked" x-init x-target="tgt" class="border px-1">click me</a>
-		<div id="tgt" class="bg-stone-100 p-2" x-merge.transition>target</div>
-		<div>Count: {count}</div>
-	</div>
+  <div x-init x-data="{}" class="w-full grid gap-4 p-4">
+    <h1>hi hi</h1>
+    <hr />
+
+    <!-- ajax -->
+    <div class="">
+      <a href="/partials/clicked" x-target="tgt" class="border px-1">click me</a>
+      <div id="tgt" class="bg-stone-100 p-2" x-merge.transition>target</div>
+    </div>
+    <hr />
+
+    <!-- toggle -->
+    <div x-data="{ open: 0 }">
+      <button class="border px-1" @click="open=!open">click to toggle</button>
+      <span x-cloak x-show="open" x-transition>Hello 👋</span>
+    </div>
+    <hr />
+
+    <!-- dialog -->
+    <div x-data="{ 'showModal': false }" @keydown.escape="showModal = false">
+      <!-- Trigger for Modal -->
+      <button type="button" @click="showModal = true">Open Modal</button>
+
+      <!-- Modal -->
+      <div
+        x-cloak
+        x-transition.opacity
+        class="fixed inset-0 z-30 flex items-center justify-center overflow-auto bg-stone-300/30"
+        x-show="showModal" x-trap="showModal">
+        <!-- Modal inner -->
+        <div
+          class="mx-auto w-full max-w-3xl rounded border border-stone-300 bg-white px-6 py-4 text-left shadow-2xl shadow-stone-900/10 grid gap-4"
+          @click.away="showModal = false">
+          <!-- Title / Close-->
+          <div class="flex items-center justify-between">
+            <h5 class="mr-3 max-w-none text-black">Title</h5>
+
+            <button
+              type="button"
+              class="z-50 cursor-pointer p-2 hover:bg-stone-100"
+              @click="showModal = false">
+              <Icon name="ph:x-bold" size={16} class="text-stone-500" />
+            </button>
+          </div>
+
+          <input type="text" id="1" class="border" autofocus>
+          <input type="text" id="2" class="border">
+          <input type="text" id="3" class="border">
+        </div>
+      </div>
+    </div>
+  </div>
 </Layout>

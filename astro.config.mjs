@@ -1,17 +1,24 @@
-import { defineConfig } from 'astro/config';
-import node from "@astrojs/node";
-import tailwind from "@astrojs/tailwind";
+import {defineConfig} from "astro/config"
+import node from "@astrojs/node"
+import tailwind from "@astrojs/tailwind"
+import alpine from "@astrojs/alpinejs"
 
-import alpinejs from "@astrojs/alpinejs";
+import icon from "astro-icon"
 
 // https://astro.build/config
 export default defineConfig({
   output: "server",
   adapter: node({
-    mode: "standalone"
+    mode: "standalone",
   }),
-  integrations: [tailwind(), alpinejs()],
+  integrations: [
+    tailwind(),
+    icon(),
+    alpine({
+      entrypoint: "/entry/alpine",
+    }),
+  ],
   image: {
     domains: ["placekitten.com"],
-  }
-});
+  },
+})
