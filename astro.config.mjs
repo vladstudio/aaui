@@ -10,5 +10,8 @@ export default defineConfig({
   adapter: node({
     mode: "standalone"
   }),
-  integrations: [tailwind(), alpinejs()]
+  integrations: [tailwind(), alpinejs()],
+  image: {
+    domains: ["placekitten.com"],
+  }
 });

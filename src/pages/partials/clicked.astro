@@ -1,5 +1,6 @@
 ---
-export const partial = true;
+export const partial = true
+const r = Math.round(Math.random() * 10000)
 ---
 
-<div id="tgt" class="p-2 bg-stone-100">I was clicked!</div>
+<div id="tgt" class="bg-pink-200 p-2" x-init x-merge.transition>I was clicked! {r}</div>

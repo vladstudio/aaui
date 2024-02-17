@@ -1,14 +1,21 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from '../layouts/Layout.astro'
+import fs from 'node:fs'
+
+try {
+	fs.accessSync('/tmp/count.txt')
+} catch {
+	fs.writeFileSync('/tmp/count.txt', '0')
+}
+const count = fs.readFileSync('/tmp/count.txt', 'utf-8')
 ---
 
 <Layout title="Welcome to Astro.">
-	<div class="grid gap-8 p-8">
+	<div class="grid justify-start gap-8 p-8">
 		<h1>hihi</h1>
-		<hr>
-		<form x-init x-target="tgt" method="post" action="/partials/clicked">
-			<button class="px-1 border">click me</button>
-		</form>
-		<div id="tgt" class="p-2 bg-stone-100">target</div>
+		<hr />
+		<a href="/partials/clicked" x-init x-target="tgt" class="border px-1">click me</a>
+		<div id="tgt" class="bg-stone-100 p-2" x-merge.transition>target</div>
+		<div>Count: {count}</div>
 	</div>
 </Layout>
