@@ -1,6 +1,8 @@
 ---
 import Layout from "@layouts/Layout.astro"
+import {Icon} from "astro-icon/components"
 import Dialog from "@components/Dialog.astro"
+import Dropdown from "@components/Dropdown.astro"
 ---
 
 <Layout title="Hi hi">
@@ -9,45 +11,57 @@ import Dialog from "@components/Dialog.astro"
       <hr />
 
       <!-- ajax -->
-      <div class="">
-         <a href="/partials/clicked" x-target="tgt" class="border px-1">
+      <div>
+         <a
+            href="/partials/clicked"
+            x-target="tgt"
+            class="kButton inline-flex items-center gap-2 p-2 outline">
+            <Icon
+               name="ph:arrow-right-bold"
+               size={16}
+               class="text-orange-500"
+            />
             click me
          </a>
-         <div id="tgt" class="bg-stone-100 p-2" x-merge.transition>target</div>
       </div>
-      <hr />
-
-      <!-- toggle -->
-      <div x-data="{ open: 0 }">
-         <button class="border px-1" x-ref="button" @click="open=!open">
-            click to toggle
-         </button>
-         <div
-            x-anchor.bottom-start="$refs.button"
-            x-cloak
-            x-show="open"
-            x-transition
-            @click.away="open=false"
-            class="w-64 border border-stone-300 bg-white p-4">
-            Hello 👋
-         </div>
-      </div>
+      <div id="tgt" class="bg-stone-100 p-2" x-merge.transition>target</div>
       <hr />
 
       <!-- dialog -->
       <Dialog>
          <div slot="title">Test <b>title</b></div>
-         <button slot="trigger" class="border px-1 hover:bg-stone-100">
-            Open Modal
-         </button>
-         <div class="grid gap-4">
+         <a slot="trigger" class="kButton p-2 outline">Open Modal</a>
+         <div class="grid gap-4 p-2">
             <input type="text" id="1" class="border" autofocus />
             <input type="text" id="2" class="border" />
             <input type="text" id="3" class="border" />
+            <Dialog>
+               <div slot="title">Test 2</div>
+               <a slot="trigger" class="kButton p-2 outline">Open Modal 2</a>
+               <div class="grid gap-4 p-2">zzzzz</div>
+            </Dialog>
          </div>
       </Dialog>
 
       <hr />
+
+      <!-- dropdown -->
+      <Dropdown>
+         <a slot="trigger" class="kButton p-2 outline">Open dropdown</a>
+         <div class="grid p-1">
+            <a href="#" class="kButton p-2">might shake pass hungry vowel</a>
+            <a href="#" class="kButton p-2">trail alike lying song hung</a>
+            <a href="#" class="kButton p-2">
+               liquid stone area somebody tightly
+            </a>
+            <a href="#" class="kButton p-2">wire citizen faster buy electric</a>
+            <a href="#" class="kButton p-2">
+               statement discover frame back largest
+            </a>
+         </div>
+      </Dropdown>
+      <hr />
+
       <p>asdasdasd</p>
       <p>asdasdasd</p>
       <p>asdasdasd</p>

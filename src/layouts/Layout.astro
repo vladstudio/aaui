@@ -17,12 +17,29 @@ const {title} = Astro.props
    </head>
    <ViewTransitions />
    <style is:global>
+      /* reset */
+      *,
+      *::before,
+      *::after {
+         @apply m-0 box-border outline-none;
+      }
+      input,
+      button,
+      textarea,
+      select {
+         font: inherit;
+      }
+      
+      /* styles */
+      *:focus {
+         @apply !outline outline-2 outline-orange-500/20 rounded-sm;
+      }
       html,
       body {
-         @apply font-sans antialiased;
+         @apply font-sans leading-relaxed antialiased;
          text-rendering: geometricPrecision;
       }
-      [disabled] {
+      [disabled], .disabled {
          @apply pointer-events-none opacity-60;
       }
       [x-cloak] {
@@ -30,6 +47,18 @@ const {title} = Astro.props
       }
       ::backdrop {
          @apply bg-stone-500/50;
+      }
+      .kPaper {
+         @apply rounded border border-stone-300 bg-white shadow-stone-900/5;
+      }
+      .kBackdrop {
+         @apply bg-stone-300/30;
+      }
+      .kButton {
+         @apply cursor-pointer rounded-sm border-transparent hover:bg-stone-100;
+      }
+      .kButton.outline {
+         @apply border border-stone-300/60;
       }
    </style>
 
