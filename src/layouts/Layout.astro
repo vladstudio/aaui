@@ -1,5 +1,6 @@
 ---
 import Nav from "../components/Nav.astro"
+import "@fontsource-variable/public-sans"
 import {ViewTransitions, fade} from "astro:transitions"
 const {title} = Astro.props
 ---
@@ -18,7 +19,8 @@ const {title} = Astro.props
    <style is:global>
       html,
       body {
-         font-family: system-ui, sans-serif;
+         @apply font-sans antialiased;
+         text-rendering: geometricPrecision;
       }
       [disabled] {
          @apply pointer-events-none opacity-60;
