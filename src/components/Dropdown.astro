@@ -12,7 +12,7 @@ const {extraClass = ""} = Astro.props
       x-cloak
       x-show="open"
       @keydown.escape.window="open=false"
-      x-transition
+      x-transition.opacity
       @click.away="open=false"
       class={extraClass + " kPaper z-40 text-sm shadow-lg"}>
       <slot />

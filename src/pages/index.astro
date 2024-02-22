@@ -30,14 +30,14 @@ import Dropdown from "@components/Dropdown.astro"
       <!-- dialog -->
       <Dialog>
          <div slot="title">Test <b>title</b></div>
-         <a slot="trigger" class="kButton p-2 outline">Open Modal</a>
+         <button slot="trigger" class="kButton p-2 outline">Open Modal</button>
          <div class="grid gap-4 p-2">
             <input type="text" id="1" class="border" autofocus />
             <input type="text" id="2" class="border" />
             <input type="text" id="3" class="border" />
             <Dialog>
                <div slot="title">Test 2</div>
-               <a slot="trigger" class="kButton p-2 outline">Open Modal 2</a>
+               <button slot="trigger" class="kButton p-2 outline">Open Modal 2</button>
                <div class="grid gap-4 p-2">zzzzz</div>
             </Dialog>
          </div>
@@ -51,13 +51,9 @@ import Dropdown from "@components/Dropdown.astro"
          <div class="grid p-1">
             <a href="#" class="kButton p-2">might shake pass hungry vowel</a>
             <a href="#" class="kButton p-2">trail alike lying song hung</a>
-            <a href="#" class="kButton p-2">
-               liquid stone area somebody tightly
-            </a>
+            <a href="#" class="kButton p-2">liquid stone area somebody</a>
             <a href="#" class="kButton p-2">wire citizen faster buy electric</a>
-            <a href="#" class="kButton p-2">
-               statement discover frame back largest
-            </a>
+            <a href="#" class="kButton p-2">statement back largest</a>
          </div>
       </Dropdown>
       <hr />
