@@ -29,17 +29,18 @@ const {title} = Astro.props
       select {
          font: inherit;
       }
-      
+
       /* styles */
       *:focus {
-         @apply !outline outline-1 outline-offset-2 outline-orange-500/30 rounded-sm;
+         @apply rounded-sm !outline outline-1 outline-offset-2 outline-orange-500/30;
       }
       html,
       body {
-         @apply font-sans leading-relaxed antialiased;
+         @apply bg-stone-100 font-sans leading-relaxed antialiased;
          text-rendering: geometricPrecision;
       }
-      [disabled], .disabled {
+      [disabled],
+      .disabled {
          @apply pointer-events-none opacity-60;
       }
       [x-cloak] {
@@ -48,17 +49,21 @@ const {title} = Astro.props
       ::backdrop {
          @apply bg-stone-500/50;
       }
-      .kPaper {
+      .aui-paper {
          @apply rounded border border-stone-300 bg-white;
       }
-      .kBackdrop {
+      .aui-backdrop {
          @apply bg-stone-300/30;
       }
-      .kButton {
-         @apply cursor-pointer rounded-sm border-transparent hover:bg-stone-100;
+      .aui-button {
+         @apply cursor-pointer rounded-sm border-transparent transition-all duration-75 hover:bg-stone-100 active:shadow-[inset_0_2px_0_0_#11111108,0_1px_0px_1px_#FFF8,0_-1px_0px_1px_#00000005];
       }
-      .kButton.outline {
-         @apply border border-stone-300/60;
+      .aui-button.outline {
+         @apply border border-stone-500/30 bg-white hover:bg-orange-50;
+      }
+      .disabled,
+      [disabled] {
+         @apply pointer-events-none opacity-60;
       }
    </style>
 

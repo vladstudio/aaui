@@ -1,8 +1,8 @@
 ---
 import Layout from "@layouts/Layout.astro"
 import {Icon} from "astro-icon/components"
-import Dialog from "@components/Dialog.astro"
-import Dropdown from "@components/Dropdown.astro"
+import Dialog from "@components/aui/Dialog.astro"
+import Dropdown from "@components/aui/Dropdown.astro"
 ---
 
 <Layout title="Hi hi">
@@ -15,7 +15,7 @@ import Dropdown from "@components/Dropdown.astro"
          <a
             href="/partials/clicked"
             x-target="tgt"
-            class="kButton inline-flex items-center gap-2 p-2 outline">
+            class="aui-button inline-flex items-center gap-2 p-2 outline">
             <Icon
                name="ph:arrow-right-bold"
                size={16}
@@ -30,14 +30,14 @@ import Dropdown from "@components/Dropdown.astro"
       <!-- dialog -->
       <Dialog>
          <div slot="title">Test <b>title</b></div>
-         <button slot="trigger" class="kButton p-2 outline">Open Modal</button>
+         <button slot="trigger" class="aui-button p-2 outline">Open Modal</button>
          <div class="grid gap-4 p-2">
             <input type="text" id="1" class="border" autofocus />
             <input type="text" id="2" class="border" />
             <input type="text" id="3" class="border" />
             <Dialog>
                <div slot="title">Test 2</div>
-               <button slot="trigger" class="kButton p-2 outline">Open Modal 2</button>
+               <button slot="trigger" class="aui-button p-2 outline">Open Modal 2</button>
                <div class="grid gap-4 p-2">zzzzz</div>
             </Dialog>
          </div>
@@ -47,13 +47,13 @@ import Dropdown from "@components/Dropdown.astro"
 
       <!-- dropdown -->
       <Dropdown>
-         <button slot="trigger" class="kButton p-2 outline">Open dropdown</button>
+         <button slot="trigger" class="aui-button p-2 outline">Open dropdown</button>
          <div class="grid p-1">
-            <a href="#" class="kButton p-2">might shake pass hungry vowel</a>
-            <a href="#" class="kButton p-2">trail alike lying song hung</a>
-            <a href="#" class="kButton p-2">liquid stone area somebody</a>
-            <a href="#" class="kButton p-2">wire citizen faster buy electric</a>
-            <a href="#" class="kButton p-2">statement back largest</a>
+            <a href="#" class="aui-button p-2">might shake pass hungry vowel</a>
+            <a href="#" class="aui-button p-2">trail alike lying song hung</a>
+            <a href="#" class="aui-button p-2">liquid stone area somebody</a>
+            <a href="#" class="aui-button p-2">wire citizen faster buy electric</a>
+            <a href="#" class="aui-button p-2">statement back largest</a>
          </div>
       </Dropdown>
       <hr />
