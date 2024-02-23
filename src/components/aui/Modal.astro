@@ -1,6 +1,30 @@
 ---
 import {Icon} from "astro-icon/components"
-const {extraClass = "max-w-sm", position = "center"} = Astro.props
+const {extraClass = "max-w-md", position = "center"} = Astro.props
+
+let panelClass = ""
+let moveFrom = ""
+let moveTo = ""
+
+if (position == "center") {
+   moveFrom = "opacity-0 translate-y-4"
+   moveTo = "opacity-100 translate-y-0"
+   panelClass = "mx-auto grid w-full rounded border"
+} else if (position == "right") {
+   moveFrom = "opacity-0 translate-x-4"
+   moveTo = "opacity-100 translate-x-0"
+   panelClass = "fixed top-0 bottom-0 right-0 w-full border-l"
+} else {
+   // left
+   moveFrom = "opacity-0 -translate-x-4"
+   moveTo = "opacity-100 translate-x-0"
+   panelClass = "fixed top-0 bottom-0 left-0 w-full border-r"
+}
+
+panelClass =
+   panelClass +
+   " z-50 border-stone-300 bg-white shadow-2xl shadow-stone-900/20 " +
+   extraClass
 ---
 
 <div
@@ -18,20 +42,24 @@ const {extraClass = "max-w-sm", position = "center"} = Astro.props
    </span>
 
    <template
+      x-cloak
       x-teleport="body"
       @click="$dispatch('modal', {id: $id('modal'), open: false})">
       <!-- backdrop -->
-      <div
-         x-cloak
-         x-transition.opacity
-         class="aui-backdrop"
-         x-show.important="open"
-         x-trap.inert.noscroll="open">
-         <!-- window -->
+      <div class="fixed bottom-0 left-0 right-0 top-0 flex flex-col justify-center items-center" x-show="open">
+         <div class="aui-backdrop" x-show="open" x-transition.opacity></div>
+         <!-- panel -->
          <div
-            class={extraClass +
-               " mx-auto grid w-full aui-paper shadow-2xl shadow-stone-900/20"}
-            @click.stop>
+            class={panelClass}
+            @click.stop
+            x-show="open"
+            x-transition:enter="transition duration-150 ease-out"
+            x-transition:enter-start={moveFrom}
+            x-transition:enter-end={moveTo}
+            x-transition:leave="transition duration-150 ease-in"
+            x-transition:leave-start={moveTo}
+            x-transition:leave-end={moveFrom}
+            x-trap.inert.noscroll="open">
             <!-- header -->
             <div class="flex w-full items-center p-2">
                <div class="flex-1 pl-2">

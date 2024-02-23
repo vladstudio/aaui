@@ -29,7 +29,7 @@ import Dropdown from "@components/aui/Dropdown.astro"
          <Modal>
             <div slot="title">Test <b>title</b></div>
             <button slot="trigger" class="aui-button p-2 outline">
-               Modal
+               Modal (center)
             </button>
             <div class="grid gap-4 p-2">
                <input type="text" id="1" class="border" autofocus />
@@ -42,6 +42,17 @@ import Dropdown from "@components/aui/Dropdown.astro"
                   </button>
                   <div class="grid gap-4 p-2">zzzzz</div>
                </Modal>
+            </div>
+         </Modal>
+         <Modal position="right">
+            <div slot="title">Test <b>title</b></div>
+            <button slot="trigger" class="aui-button p-2 outline">
+               Modal (right)
+            </button>
+            <div class="grid gap-4 p-2">
+               <p>zzzz</p>
+               <p>zzzz</p>
+               <p>zzzz</p>
             </div>
          </Modal>
          <Dropdown>
@@ -66,9 +77,6 @@ import Dropdown from "@components/aui/Dropdown.astro"
 
       <hr />
 
-      <hr />
-
-      <p><a href="/" class="underline">go home</a></p>
       <p>asdasdasd</p>
    </div>
 </Layout>

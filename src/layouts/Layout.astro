@@ -49,11 +49,8 @@ const {title} = Astro.props
       ::backdrop {
          @apply bg-stone-500/50;
       }
-      .aui-paper {
-         @apply rounded border border-stone-300 bg-white;
-      }
       .aui-backdrop {
-         @apply bg-stone-300/30 fixed left-0 top-0 z-50 flex h-[100dvh] w-[100dvw] items-center justify-center overflow-auto;
+         @apply bg-stone-300/30 fixed left-0 top-0 bottom-0 right-0 z-50;
       }
       .aui-button {
          @apply cursor-pointer rounded-sm border-transparent transition-all duration-75 hover:bg-stone-100 active:shadow-[inset_0_2px_0_0_#11111108,0_1px_0px_1px_#FFF8,0_-1px_0px_1px_#00000005];

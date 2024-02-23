@@ -14,7 +14,7 @@ const {extraClass = ""} = Astro.props
       x-transition.opacity
       @click.away="open=false"
       @keydown.escape.window.stop.prevent="open=false"
-      class={extraClass + " aui-paper z-40 text-sm shadow-lg shadow-stone-900/10"}>
+      class={extraClass + " rounded border border-stone-300 bg-white z-40 text-sm shadow-lg shadow-stone-900/10"}>
       <slot />
    </div>
 </div>
