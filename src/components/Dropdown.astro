@@ -11,10 +11,10 @@ const {extraClass = ""} = Astro.props
       x-anchor.bottom-start.offset.6="$refs.button"
       x-cloak
       x-show="open"
-      @keydown.escape.window="open=false"
       x-transition.opacity
       @click.away="open=false"
-      class={extraClass + " kPaper z-40 text-sm shadow-lg"}>
+      @keydown.escape.window.stop.prevent="open=false"
+      class={extraClass + " kPaper z-40 text-sm shadow-lg shadow-stone-900/10"}>
       <slot />
    </div>
 </div>

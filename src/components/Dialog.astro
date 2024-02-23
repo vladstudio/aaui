@@ -6,7 +6,8 @@ const {extraClass = "max-w-sm"} = Astro.props
 <div
    x-id="['modal']"
    x-data="{ open: false }"
-   @keydown.escape.window="$dispatch('set-modal', {id: $id('modal'), open: false})"
+   x-transition.opacity
+   @keydown.escape.window.stop.prevent="$dispatch('set-modal', {id: $id('modal'), open: false})"
    @set-modal.window="if ($event.detail.id==$id('modal')){\
       open = $event.detail.open; \
       document.body.style.overflowY = open ? 'hidden' : ''}">
@@ -30,7 +31,7 @@ const {extraClass = "max-w-sm"} = Astro.props
          x-trap="open">
          <!-- window -->
          <div
-            class={extraClass + " mx-auto grid w-full kPaper text-left shadow-2xl"}
+            class={extraClass + " mx-auto grid w-full kPaper text-left shadow-2xl  shadow-stone-900/20"}
             @click.stop>
             <!-- header -->
             <div class="flex w-full items-center truncate p-2">
