@@ -1,5 +1,14 @@
+---
+const path = new URL(Astro.request.url).pathname
+---
 
-<div class="p-4 bg-stone-50 flex items-center gap-4">
-	<a class="underline" href="/">Home</a>
-	<a class="underline" href="/test/123">Test 123</a>
+<div class="flex items-center gap-4 bg-stone-50 p-4">
+   <a class={`underline ${path === "/" ? "!bg-pink-100" : ""}`} href="/">
+      Home
+   </a>
+   <a
+      class={`underline ${path === "/test/123" ? "!bg-pink-100" : ""}`}
+      href="/test/123">
+      Test 123
+   </a>
 </div>
