@@ -1,7 +1,7 @@
 ---
 import Layout from "@layouts/Layout.astro"
 import {Icon} from "astro-icon/components"
-import Dialog from "@components/aui/Dialog.astro"
+import Modal from "@components/aui/Modal.astro"
 import Dropdown from "@components/aui/Dropdown.astro"
 ---
 
@@ -26,27 +26,27 @@ import Dropdown from "@components/aui/Dropdown.astro"
       <hr />
 
       <div class="flex items-center gap-4">
-         <Dialog>
+         <Modal>
             <div slot="title">Test <b>title</b></div>
             <button slot="trigger" class="aui-button p-2 outline">
-               Open Modal
+               Modal
             </button>
             <div class="grid gap-4 p-2">
                <input type="text" id="1" class="border" autofocus />
                <input type="text" id="2" class="border" />
                <input type="text" id="3" class="border" />
-               <Dialog>
+               <Modal>
                   <div slot="title">Test 2</div>
                   <button slot="trigger" class="aui-button p-2 outline">
-                     Open Modal 2
+                     Modal 2
                   </button>
                   <div class="grid gap-4 p-2">zzzzz</div>
-               </Dialog>
+               </Modal>
             </div>
-         </Dialog>
+         </Modal>
          <Dropdown>
             <button slot="trigger" class="aui-button p-2 outline">
-               Open dropdown
+               Dropdown
             </button>
             <div class="grid p-1">
                <a href="#" class="aui-button p-2">
@@ -68,7 +68,7 @@ import Dropdown from "@components/aui/Dropdown.astro"
 
       <hr />
 
-      <p>asdasdasd</p>
+      <p><a href="/" class="underline">go home</a></p>
       <p>asdasdasd</p>
    </div>
 </Layout>
