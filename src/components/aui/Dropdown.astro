@@ -3,12 +3,12 @@ const {extraClass = ""} = Astro.props
 ---
 
 <div x-id="['dropdown']" x-data="{ open: false }">
-   <span class="inline-flex" x-ref="button" @click="open=!open">
+   <span class="inline-flex" x-ref="trigger" @click="open=!open">
       <slot name="trigger" />
    </span>
 
    <div
-      x-anchor.bottom-start.offset.6="$refs.button"
+      x-anchor.bottom-start.offset.6="$refs.trigger"
       x-cloak
       x-show.important="open"
       x-transition.opacity

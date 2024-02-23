@@ -7,11 +7,9 @@ import Dropdown from "@components/aui/Dropdown.astro"
 
 <Layout title="Hi hi">
    <div x-init x-data="{}" class="grid w-full gap-4 p-4">
-      <h1>hi hi</h1>
       <hr />
-
       <!-- ajax -->
-      <div>
+      <div class="flex items-stretch gap-4">
          <a
             href="/partials/clicked"
             x-target="tgt"
@@ -23,58 +21,53 @@ import Dropdown from "@components/aui/Dropdown.astro"
             />
             click me
          </a>
+         <div id="tgt" class="bg-stone-100 p-2" x-merge.transition>target</div>
       </div>
-      <div id="tgt" class="bg-stone-100 p-2" x-merge.transition>target</div>
       <hr />
 
-      <!-- dialog -->
-      <Dialog>
-         <div slot="title">Test <b>title</b></div>
-         <button slot="trigger" class="aui-button p-2 outline">Open Modal</button>
-         <div class="grid gap-4 p-2">
-            <input type="text" id="1" class="border" autofocus />
-            <input type="text" id="2" class="border" />
-            <input type="text" id="3" class="border" />
-            <Dialog>
-               <div slot="title">Test 2</div>
-               <button slot="trigger" class="aui-button p-2 outline">Open Modal 2</button>
-               <div class="grid gap-4 p-2">zzzzz</div>
-            </Dialog>
-         </div>
-      </Dialog>
+      <div class="flex items-center gap-4">
+         <Dialog>
+            <div slot="title">Test <b>title</b></div>
+            <button slot="trigger" class="aui-button p-2 outline">
+               Open Modal
+            </button>
+            <div class="grid gap-4 p-2">
+               <input type="text" id="1" class="border" autofocus />
+               <input type="text" id="2" class="border" />
+               <input type="text" id="3" class="border" />
+               <Dialog>
+                  <div slot="title">Test 2</div>
+                  <button slot="trigger" class="aui-button p-2 outline">
+                     Open Modal 2
+                  </button>
+                  <div class="grid gap-4 p-2">zzzzz</div>
+               </Dialog>
+            </div>
+         </Dialog>
+         <Dropdown>
+            <button slot="trigger" class="aui-button p-2 outline">
+               Open dropdown
+            </button>
+            <div class="grid p-1">
+               <a href="#" class="aui-button p-2">
+                  might shake pass hungry vowel
+               </a>
+               <a href="#" class="aui-button p-2">
+                  trail alike lying song hung
+               </a>
+               <a href="#" class="aui-button p-2">liquid stone area somebody</a>
+               <a href="#" class="aui-button p-2">
+                  wire citizen faster buy electric
+               </a>
+               <a href="#" class="aui-button p-2">statement back largest</a>
+            </div>
+         </Dropdown>
+      </div>
 
       <hr />
 
-      <!-- dropdown -->
-      <Dropdown>
-         <button slot="trigger" class="aui-button p-2 outline">Open dropdown</button>
-         <div class="grid p-1">
-            <a href="#" class="aui-button p-2">might shake pass hungry vowel</a>
-            <a href="#" class="aui-button p-2">trail alike lying song hung</a>
-            <a href="#" class="aui-button p-2">liquid stone area somebody</a>
-            <a href="#" class="aui-button p-2">wire citizen faster buy electric</a>
-            <a href="#" class="aui-button p-2">statement back largest</a>
-         </div>
-      </Dropdown>
       <hr />
 
-      <p>asdasdasd</p>
-      <p>asdasdasd</p>
-      <p>asdasdasd</p>
-      <p>asdasdasd</p>
-      <p>asdasdasd</p>
-      <p>asdasdasd</p>
-      <p>asdasdasd</p>
-      <p>asdasdasd</p>
-      <p>asdasdasd</p>
-      <p>asdasdasd</p>
-      <p>asdasdasd</p>
-      <p>asdasdasd</p>
-      <p>asdasdasd</p>
-      <p>asdasdasd</p>
-      <p>asdasdasd</p>
-      <p>asdasdasd</p>
-      <p>asdasdasd</p>
       <p>asdasdasd</p>
       <p>asdasdasd</p>
    </div>
