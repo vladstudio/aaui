@@ -3,20 +3,20 @@ import {Theme, Transitions} from "./Theme.js"
 import {Icon} from "astro-icon/components"
 
 const props = Astro.props
-const position = props.position ? props.position : "center"
-delete props.position
+const is = props.is ? props.is : "center"
+delete props.is
 
 const layout =
-  position == "left"
+  is == "left"
     ? "fixed top-0 bottom-0 left-0"
-    : position == "right"
+    : is == "right"
       ? "fixed top-0 bottom-0 right-0"
       : // center
         "mx-auto grid"
 
 props.class = [
   Theme.modal.common,
-  Theme.modal[position],
+  Theme.modal[is],
   "z-50 w-full",
   layout,
   props.class ? props.class : "",
@@ -57,7 +57,7 @@ props.class = [
       <!-- panel -->
       <div
         {...props}
-        {...Transitions.modal[position]}
+        {...Transitions.modal[is]}
         @click.stop
         x-show="open"
         x-trap.inert.noscroll="open">

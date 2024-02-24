@@ -14,7 +14,7 @@ import Dropdown from "@components/aaui/Dropdown.astro"
       <Button
         href="/partials/clicked"
         x-target="tgt"
-        class="aui-button inline-flex items-center gap-2 p-2 outline">
+        class="inline-flex items-center gap-2 p-2 outline">
         <Icon name="ph:arrow-right-bold" size={16} class="text-orange-500" />
         click me
       </Button>
@@ -25,38 +25,30 @@ import Dropdown from "@components/aaui/Dropdown.astro"
     <div class="flex items-center gap-4">
       <Modal>
         <div slot="title">Test <b>title</b></div>
-        <Button slot="trigger" class="aui-button p-2 outline">
-          Modal (center)
-        </Button>
+        <Button slot="trigger" class="p-2 outline"> Modal </Button>
         <div class="grid gap-4 p-2">
           <input type="text" id="1" class="border" autofocus />
           <input type="text" id="2" class="border" />
           <input type="text" id="3" class="border" />
           <Modal>
             <div slot="title">Test 2</div>
-            <Button slot="trigger" class="aui-button p-2 outline">
-              Modal 2
-            </Button>
+            <Button slot="trigger" class="p-2 outline"> Modal 2 </Button>
             <div class="grid gap-4 p-2">zzzzz</div>
           </Modal>
         </div>
       </Modal>
-      <Modal position="right">
+      <Modal is="right">
         <div slot="title">Test <b>title</b></div>
-        <Button slot="trigger" class="aui-button p-2 outline">
-          Modal (right)
-        </Button>
+        <Button slot="trigger" class="p-2 outline"> Modal is right </Button>
         <div class="grid gap-4 p-2">
           <p>zzzz</p>
           <p>zzzz</p>
           <p>zzzz</p>
         </div>
       </Modal>
-      <Modal position="left">
+      <Modal is="left">
         <div slot="title">Test <b>title</b></div>
-        <Button slot="trigger" class="aui-button p-2 outline">
-          Modal (left)
-        </Button>
+        <Button slot="trigger" class="p-2 outline"> Modal is left </Button>
         <div class="grid gap-4 p-2">
           <p>zzzz</p>
           <p>zzzz</p>
@@ -64,15 +56,13 @@ import Dropdown from "@components/aaui/Dropdown.astro"
         </div>
       </Modal>
       <Dropdown>
-        <Button slot="trigger" class="aui-button p-2 outline">Dropdown</Button>
+        <Button slot="trigger" class="p-2 outline">Dropdown</Button>
         <div class="grid p-1">
-          <a href="#" class="aui-button p-2">might shake pass hungry vowel</a>
-          <a href="#" class="aui-button p-2">trail alike lying song hung</a>
-          <a href="#" class="aui-button p-2">liquid stone area somebody</a>
-          <a href="#" class="aui-button p-2">
-            wire citizen faster buy electric
-          </a>
-          <a href="#" class="aui-button p-2">statement back largest</a>
+          <Button is="ghost" href="#" class="p-2">might shake pass hungry vowel</Button>
+          <Button is="ghost" href="#" class="p-2">trail alike lying song hung</Button>
+          <Button is="ghost" href="#" class="p-2">liquid stone area somebody</Button>
+          <Button is="ghost" href="#" class="p-2"> wire citizen faster buy </Button>
+          <Button is="ghost" href="#" class="p-2">statement back largest</Button>
         </div>
       </Dropdown>
     </div>
