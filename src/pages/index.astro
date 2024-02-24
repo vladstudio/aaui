@@ -16,7 +16,13 @@ import Dropdown from "@components/aaui/Dropdown.astro"
         x-target="tgt-1"
         class="inline-flex items-center gap-2 p-2">
         <Icon name="ph:arrow-right-bold" size={16} class="text-orange-500" />
-        click me
+        load partial from server
+      </Button>
+      <Button
+        href="/partials/test-modal/?id=tgt-1"
+        x-target="tgt-1"
+        class="inline-flex items-center gap-2 p-2">
+        load modal from server
       </Button>
       <div id="tgt-1" class="bg-stone-100 p-2" x-merge.transition>target</div>
     </div>
@@ -44,6 +50,11 @@ import Dropdown from "@components/aaui/Dropdown.astro"
           <p>zzzz</p>
           <p>zzzz</p>
           <p>zzzz</p>
+          <Modal>
+            <div slot="title">Test 2</div>
+            <Button slot="trigger" class="p-2"> Modal 2 </Button>
+            <div class="grid gap-4 p-2">zzzzz</div>
+          </Modal>
         </div>
       </Modal>
       <Modal is="left">

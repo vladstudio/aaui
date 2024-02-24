@@ -4,8 +4,10 @@ import Button from "./Button.astro"
 import {Icon} from "astro-icon/components"
 
 const props = Astro.props
-const is = props.is || "center"  // center, left, right
+const is = props.is || "center" // center, left, right
 delete props.is
+const immediate = props.immediate || null
+delete props.immediate
 
 const layout =
   is == "left"
@@ -22,18 +24,26 @@ props.class = [
   layout,
   props.class || "",
 ].join(" ")
+
+const openImmediately = immediate
+  ? {"x-data": "{ open: true }"}
+  : {"x-data": "{ open: false }"}
 ---
 
 <div
+  {...openImmediately}
   x-id="['modal']"
-  x-data="{ open: false }"
   @keydown.escape.window.stop.prevent="$dispatch('modal', {id: $id('modal'), open: false})"
   @modal.window="if ($event.detail.id==$id('modal')) {open = $event.detail.open}">
+  
   <!-- trigger -->
-  <span
-    @click="$dispatch('modal', {id: $id('modal'), open: true})">
-    <slot name="trigger" />
-  </span>
+  {
+    !immediate && (
+      <span @click="$dispatch('modal', {id: $id('modal'), open: true})">
+        <slot name="trigger" />
+      </span>
+    )
+  }
 
   <template
     x-cloak
