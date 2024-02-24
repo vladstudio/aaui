@@ -4,7 +4,7 @@ import Button from "./Button.astro"
 import {Icon} from "astro-icon/components"
 
 const props = Astro.props
-const is = props.is || "center"
+const is = props.is || "center"  // center, left, right
 delete props.is
 
 const layout =
@@ -31,9 +31,7 @@ props.class = [
   @modal.window="if ($event.detail.id==$id('modal')) {open = $event.detail.open}">
   <!-- trigger -->
   <span
-    class="inline-flex"
-    @click="$dispatch('modal', {id: $id('modal'), open: true})"
-    :disabled="open">
+    @click="$dispatch('modal', {id: $id('modal'), open: true})">
     <slot name="trigger" />
   </span>
 
@@ -41,10 +39,11 @@ props.class = [
     x-cloak
     x-teleport="body"
     @click="$dispatch('modal', {id: $id('modal'), open: false})">
-    <!-- backdrop -->
+    <!-- wrap -->
     <div
       class="fixed bottom-0 left-0 right-0 top-0 flex flex-col items-center justify-center p-2 sm:p-0"
       x-show="open">
+      <!-- backdrop -->
       <div
         class={[
           Theme.backdrop,
@@ -57,6 +56,7 @@ props.class = [
       <div
         {...props}
         {...Transitions.modal[is]}
+        :id="$id('modal')"
         @click.stop
         x-show="open"
         x-trap.inert.noscroll="open">
@@ -72,7 +72,6 @@ props.class = [
             <Icon name="ph:x-bold" size={16} class="text-stone-500" />
           </Button>
         </div>
-
         <!-- content -->
         <div class="p-2">
           <slot />
