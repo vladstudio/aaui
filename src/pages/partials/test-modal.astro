@@ -1,14 +1,13 @@
 ---
 import Modal from "@components/aaui/Modal.astro"
 export const partial = true
-const id = Astro.url.searchParams.get("id") || "tgt-1"
 const r = Date.now()
 ---
 
-<div id={id}>
+<div id="teleport">
   <Modal immediate>
     <div slot="title">Test <b>immediate</b></div>
-    <div id={id} class="bg-pink-200 p-2" x-init x-merge.transition>
+    <div class="bg-pink-200 p-2" x-init x-merge.transition>
       I was sent from server! random #: {r}
     </div>
   </Modal>

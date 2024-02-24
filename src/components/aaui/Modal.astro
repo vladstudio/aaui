@@ -24,18 +24,15 @@ props.class = [
   layout,
   props.class || "",
 ].join(" ")
-
-const openImmediately = immediate
-  ? {"x-data": "{ open: true }"}
-  : {"x-data": "{ open: false }"}
 ---
 
 <div
-  {...openImmediately}
+  {...immediate ? {"x-init": "$nextTick(() => {open = true})"} : {}}
+  x-data="{ open: false }"
   x-id="['modal']"
+  :id="$id('modal')"
   @keydown.escape.window.stop.prevent="$dispatch('modal', {id: $id('modal'), open: false})"
   @modal.window="if ($event.detail.id==$id('modal')) {open = $event.detail.open}">
-  
   <!-- trigger -->
   {
     !immediate && (
