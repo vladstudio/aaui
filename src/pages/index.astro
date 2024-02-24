@@ -5,6 +5,7 @@ import Link from "@components/aaui/Link.astro"
 import Button from "@components/aaui/Button.astro"
 import Modal from "@components/aaui/Modal.astro"
 import Dropdown from "@components/aaui/Dropdown.astro"
+import Accordion from "@components/aaui/Accordion.astro"
 ---
 
 <Layout title="Hi hi">
@@ -28,6 +29,7 @@ import Dropdown from "@components/aaui/Dropdown.astro"
         load modal from server
       </Button>
     </div>
+    
     <hr />
 
     <div class="grid items-center gap-4 sm:flex">
@@ -98,5 +100,9 @@ import Dropdown from "@components/aaui/Dropdown.astro"
       <Button is="primary" class="px-2 py-1">is primary</Button>
       <Button href="/" class="px-2 py-1">a href</Button>
     </div>
+
+     <hr />
+
+     <Accordion />
   </div>
 </Layout>

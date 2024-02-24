@@ -16,6 +16,7 @@ export const Theme = {
     right: "border-l",
     left: "border-r",
   },
+  accordion: {},
 }
 
 export const Transitions = {

@@ -5,5 +5,5 @@ const id = Astro.url.searchParams.get('id') || 'tgt-1'
 ---
 
 <div id={id} class="bg-pink-200 px-2 py-1" x-init x-merge.transition>
-  I was sent from server! random #: {r}
+  I was sent from server! {r}
 </div>
