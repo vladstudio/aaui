@@ -1,7 +1,6 @@
 ---
-
 import Link from "@components/aaui/Link.astro"
-const path = new URL(Astro.request.url).pathname
+const path = Astro.url.pathname
 ---
 
 <div class="flex items-center gap-4 bg-white p-4 shadow shadow-stone-500/10">

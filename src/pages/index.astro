@@ -10,36 +10,37 @@ import Dropdown from "@components/aaui/Dropdown.astro"
 <Layout title="Hi hi">
   <div x-init x-data="{}" class="grid w-full gap-4 p-4">
     <!-- ajax -->
-    <div class="grid sm:flex items-stretch gap-4">
+    <div class="grid items-stretch gap-4 sm:flex">
       <Button
-        href="/partials/clicked"
-        x-target="tgt"
-        class="inline-flex items-center gap-2 p-2 outline">
+        href="/partials/clicked/?id=tgt-1"
+        x-target="tgt-1"
+        class="inline-flex items-center gap-2 p-2">
         <Icon name="ph:arrow-right-bold" size={16} class="text-orange-500" />
         click me
       </Button>
-      <div id="tgt" class="bg-stone-100 p-2" x-merge.transition>target</div>
+      <div id="tgt-1" class="bg-stone-100 p-2" x-merge.transition>target</div>
     </div>
     <hr />
 
-    <div class="grid sm:flex items-center gap-4">
+    <div class="grid items-center gap-4 sm:flex">
       <Modal>
         <div slot="title">Test <b>title</b></div>
-        <Button slot="trigger" class="p-2 outline"> Modal </Button>
+        <Button slot="trigger" class="p-2"> Modal </Button>
         <div class="grid gap-4 p-2">
           <input type="text" id="1" class="border" autofocus />
           <input type="text" id="2" class="border" />
           <input type="text" id="3" class="border" />
           <Modal>
             <div slot="title">Test 2</div>
-            <Button slot="trigger" class="p-2 outline"> Modal 2 </Button>
+            <Button slot="trigger" class="p-2"> Modal 2 </Button>
             <div class="grid gap-4 p-2">zzzzz</div>
           </Modal>
         </div>
       </Modal>
+      <div id="tgt-modal">tgt-modal</div>
       <Modal is="right">
         <div slot="title">Test <b>title</b></div>
-        <Button slot="trigger" class="p-2 outline"> Modal is right </Button>
+        <Button slot="trigger" class="p-2"> Modal is right </Button>
         <div class="grid gap-4 p-2">
           <p>zzzz</p>
           <p>zzzz</p>
@@ -48,7 +49,7 @@ import Dropdown from "@components/aaui/Dropdown.astro"
       </Modal>
       <Modal is="left">
         <div slot="title">Test <b>title</b></div>
-        <Button slot="trigger" class="p-2 outline"> Modal is left </Button>
+        <Button slot="trigger" class="p-2"> Modal is left </Button>
         <div class="grid gap-4 p-2">
           <p>zzzz</p>
           <p>zzzz</p>
@@ -56,20 +57,29 @@ import Dropdown from "@components/aaui/Dropdown.astro"
         </div>
       </Modal>
       <Dropdown>
-        <Button slot="trigger" class="p-2 outline">Dropdown</Button>
+        <Button slot="trigger" class="p-2">Dropdown</Button>
         <div class="grid p-1">
-          <Button is="ghost" href="#" class="p-2">might shake pass hungry vowel</Button>
-          <Button is="ghost" href="#" class="p-2">trail alike lying song hung</Button>
-          <Button is="ghost" href="#" class="p-2">liquid stone area somebody</Button>
-          <Button is="ghost" href="#" class="p-2"> wire citizen faster buy </Button>
-          <Button is="ghost" href="#" class="p-2">statement back largest</Button>
+          <Button is="ghost" href="#" class="p-2"
+            >might shake pass hungry vowel</Button
+          >
+          <Button is="ghost" href="#" class="p-2"
+            >trail alike lying song hung</Button
+          >
+          <Button is="ghost" href="#" class="p-2"
+            >liquid stone area somebody</Button
+          >
+          <Button is="ghost" href="#" class="p-2">
+            wire citizen faster buy
+          </Button>
+          <Button is="ghost" href="#" class="p-2">statement back largest</Button
+          >
         </div>
       </Dropdown>
     </div>
 
     <hr />
 
-    <div class="grid sm:flex items-center gap-4">
+    <div class="grid items-center gap-4 sm:flex">
       <Button class="px-2 py-1">button</Button>
       <Button is="ghost" class="px-2 py-1">is ghost</Button>
       <Button is="primary" class="px-2 py-1">is primary</Button>
