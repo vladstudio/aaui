@@ -1,7 +1,7 @@
 ---
 import {Theme} from "./Theme.js"
 const props = Astro.props
-props.class = [Theme.accordion, props.class || ""].join(" ")
+props.class = [Theme.accordion, props.class || null].join(" ")
 ---
 
 <details open>
