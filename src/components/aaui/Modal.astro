@@ -4,7 +4,7 @@ import Button from "./Button.astro"
 import {Icon} from "astro-icon/components"
 
 const props = Astro.props
-const is = props.is ? props.is : "center"
+const is = props.is || "center"
 delete props.is
 
 const layout =
@@ -20,7 +20,7 @@ props.class = [
   Theme.modal[is],
   "z-50 w-full",
   layout,
-  props.class ? props.class : "",
+  props.class || "",
 ].join(" ")
 ---
 

@@ -1,7 +1,7 @@
 ---
 import {Theme, Transitions} from "./Theme.js"
 const props = Astro.props
-props.class = [Theme.dropdown, "z-40", props.class ? props.class : ""].join(" ")
+props.class = [Theme.dropdown, "z-40", props.class || ""].join(" ")
 ---
 
 <div x-id="['dropdown']" x-data="{open: false}">

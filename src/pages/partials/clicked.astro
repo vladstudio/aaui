@@ -2,7 +2,6 @@
 export const partial = true
 const r = Math.round(Math.random() * 10000)
 const id = Astro.url.searchParams.get('id') || 'tgt-1' 
-console.log(id)
 ---
 
 <div id={id} class="bg-pink-200 p-2" x-init x-merge.transition>
