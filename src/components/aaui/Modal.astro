@@ -1,0 +1,83 @@
+---
+import {Theme, Transitions} from "./Theme.js"
+import {Icon} from "astro-icon/components"
+
+const props = Astro.props
+const position = props.position ? props.position : "center"
+delete props.position
+
+const layout =
+  position == "left"
+    ? "fixed top-0 bottom-0 left-0"
+    : position == "right"
+      ? "fixed top-0 bottom-0 right-0"
+      : // center
+        "mx-auto grid"
+
+props.class = [
+  Theme.modal.common,
+  Theme.modal[position],
+  "z-50 w-full",
+  layout,
+  props.class ? props.class : "",
+].join(" ")
+---
+
+<div
+  x-id="['modal']"
+  x-data="{ open: false }"
+  x-transition.opacity
+  @keydown.escape.window.stop.prevent="$dispatch('modal', {id: $id('modal'), open: false})"
+  @modal.window="if ($event.detail.id==$id('modal')) {open = $event.detail.open}">
+  <!-- trigger -->
+  <span
+    class="inline-flex"
+    @click="$dispatch('modal', {id: $id('modal'), open: true})"
+    :disabled="open">
+    <slot name="trigger" />
+  </span>
+
+  <template
+    x-cloak
+    x-teleport="body"
+    @click="$dispatch('modal', {id: $id('modal'), open: false})">
+    <!-- backdrop -->
+    <div
+      class="fixed bottom-0 left-0 right-0 top-0 flex flex-col items-center justify-center"
+      x-show="open">
+      <div
+        class={[
+          Theme.backdrop,
+          "fixed bottom-0 left-0 right-0 top-0 z-50",
+        ].join(" ")}
+        x-show="open"
+        {...Transitions.backdrop}
+        >
+      </div>
+      <!-- panel -->
+      <div
+        {...props}
+        {...Transitions.modal[position]}
+        @click.stop
+        x-show="open"
+        x-trap.inert.noscroll="open">
+        <!-- header -->
+        <div class="flex w-full items-center p-2">
+          <div class="flex-1 pl-2">
+            <slot name="title" />
+          </div>
+          <button
+            class="aui-button p-2"
+            @click="$dispatch('modal', {id: $id('modal'), open: false})">
+            <Icon name="ph:x-bold" size={16} class="text-stone-500" />
+          </button>
+        </div>
+
+        <!-- content -->
+        <div class="p-2">
+          <slot />
+        </div>
+      </div>
+    </div>
+  </template>
+</div>

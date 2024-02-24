@@ -1,71 +1,24 @@
 ---
-import Nav from "../components/Nav.astro"
+import Nav from "@components/Nav.astro"
 import "@fontsource-variable/public-sans"
 import {ViewTransitions, fade} from "astro:transitions"
 const {title} = Astro.props
+import "@components/aaui/Theme.css"
 ---
 
 <!doctype html>
-<html lang="en" transition:animate={fade({duration: "150ms"})}>
-   <head>
-      <meta charset="UTF-8" />
-      <meta name="description" content="Astro description" />
-      <meta name="viewport" content="width=device-width" />
-      <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-      <meta name="generator" content={Astro.generator} />
-      <title>{title}</title>
-   </head>
-   <ViewTransitions />
-   <style is:global>
-      /* reset */
-      *,
-      *::before,
-      *::after {
-         @apply m-0 box-border outline-none;
-      }
-      input,
-      button,
-      textarea,
-      select {
-         font: inherit;
-      }
-
-      /* styles */
-      *:focus {
-         @apply rounded-sm !outline outline-1 outline-offset-2 outline-orange-500/30;
-      }
-      html,
-      body {
-         @apply bg-stone-100 font-sans leading-relaxed antialiased;
-         text-rendering: geometricPrecision;
-      }
-      [disabled],
-      .disabled {
-         @apply pointer-events-none opacity-60;
-      }
-      [x-cloak] {
-         @apply !hidden;
-      }
-      ::backdrop {
-         @apply bg-stone-500/50;
-      }
-      .aui-backdrop {
-         @apply bg-stone-300/30 fixed left-0 top-0 bottom-0 right-0 z-50;
-      }
-      .aui-button {
-         @apply cursor-pointer rounded-sm border-transparent transition-all duration-75 hover:bg-stone-100 active:shadow-[inset_0_2px_0_0_#11111108,0_1px_0px_1px_#FFF8,0_-1px_0px_1px_#00000005];
-      }
-      .aui-button.outline {
-         @apply border border-stone-500/30 bg-white hover:bg-orange-50;
-      }
-      .disabled,
-      [disabled] {
-         @apply pointer-events-none opacity-60;
-      }
-   </style>
-
-   <body>
-      <Nav />
-      <slot />
-   </body>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <ViewTransitions />
+  <body transition:animate={fade({duration: "150ms"})}>
+    <Nav />
+    <slot />
+  </body>
 </html>

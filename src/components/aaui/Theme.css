@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* reset */
+*,
+*::before,
+*::after {
+  @apply m-0 box-border outline-none;
+}
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+*:focus {
+  @apply rounded-sm !outline outline-1 outline-offset-2 outline-orange-500/30;
+}
+html,
+body {
+  @apply bg-stone-100 font-sans leading-relaxed antialiased;
+  text-rendering: geometricPrecision;
+}
+[x-cloak] {
+  @apply !hidden;
+}
+[disabled],
+.disabled {
+  @apply pointer-events-none opacity-60;
+}

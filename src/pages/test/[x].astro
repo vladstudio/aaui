@@ -1,12 +1,17 @@
 ---
-import Layout from "@layouts/Layout.astro";
-const { x } = Astro.params;
+import Layout from "@layouts/Layout.astro"
+const {x} = Astro.params
 ---
 
 <Layout title="Welcome to Astro.">
   <div class="grid gap-8 p-8">
     <h1>test</h1>
-    <img src="https://placekitten.com/200/300" width={200} height={300} alt="kitten" />
+    <img
+      src="https://placekitten.com/200/300"
+      width={200}
+      height={300}
+      alt="kitten"
+    />
     x = {x}
   </div>
 </Layout>

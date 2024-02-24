@@ -1,82 +1,89 @@
 ---
 import Layout from "@layouts/Layout.astro"
 import {Icon} from "astro-icon/components"
-import Modal from "@components/aui/Modal.astro"
-import Dropdown from "@components/aui/Dropdown.astro"
+import Button from "@components/aaui/Button.astro"
+import Modal from "@components/aaui/Modal.astro"
+import Dropdown from "@components/aaui/Dropdown.astro"
 ---
 
 <Layout title="Hi hi">
-   <div x-init x-data="{}" class="grid w-full gap-4 p-4">
-      <hr />
-      <!-- ajax -->
-      <div class="flex items-stretch gap-4">
-         <a
-            href="/partials/clicked"
-            x-target="tgt"
-            class="aui-button inline-flex items-center gap-2 p-2 outline">
-            <Icon
-               name="ph:arrow-right-bold"
-               size={16}
-               class="text-orange-500"
-            />
-            click me
-         </a>
-         <div id="tgt" class="bg-stone-100 p-2" x-merge.transition>target</div>
-      </div>
-      <hr />
+  <div x-init x-data="{}" class="grid w-full gap-4 p-4">
+    <hr />
+    <!-- ajax -->
+    <div class="flex items-stretch gap-4">
+      <Button
+        href="/partials/clicked"
+        x-target="tgt"
+        class="aui-button inline-flex items-center gap-2 p-2 outline">
+        <Icon name="ph:arrow-right-bold" size={16} class="text-orange-500" />
+        click me
+      </Button>
+      <div id="tgt" class="bg-stone-100 p-2" x-merge.transition>target</div>
+    </div>
+    <hr />
 
-      <div class="flex items-center gap-4">
-         <Modal>
-            <div slot="title">Test <b>title</b></div>
-            <button slot="trigger" class="aui-button p-2 outline">
-               Modal (center)
-            </button>
-            <div class="grid gap-4 p-2">
-               <input type="text" id="1" class="border" autofocus />
-               <input type="text" id="2" class="border" />
-               <input type="text" id="3" class="border" />
-               <Modal>
-                  <div slot="title">Test 2</div>
-                  <button slot="trigger" class="aui-button p-2 outline">
-                     Modal 2
-                  </button>
-                  <div class="grid gap-4 p-2">zzzzz</div>
-               </Modal>
-            </div>
-         </Modal>
-         <Modal position="right">
-            <div slot="title">Test <b>title</b></div>
-            <button slot="trigger" class="aui-button p-2 outline">
-               Modal (right)
-            </button>
-            <div class="grid gap-4 p-2">
-               <p>zzzz</p>
-               <p>zzzz</p>
-               <p>zzzz</p>
-            </div>
-         </Modal>
-         <Dropdown>
-            <button slot="trigger" class="aui-button p-2 outline">
-               Dropdown
-            </button>
-            <div class="grid p-1">
-               <a href="#" class="aui-button p-2">
-                  might shake pass hungry vowel
-               </a>
-               <a href="#" class="aui-button p-2">
-                  trail alike lying song hung
-               </a>
-               <a href="#" class="aui-button p-2">liquid stone area somebody</a>
-               <a href="#" class="aui-button p-2">
-                  wire citizen faster buy electric
-               </a>
-               <a href="#" class="aui-button p-2">statement back largest</a>
-            </div>
-         </Dropdown>
-      </div>
+    <div class="flex items-center gap-4">
+      <Modal>
+        <div slot="title">Test <b>title</b></div>
+        <Button slot="trigger" class="aui-button p-2 outline">
+          Modal (center)
+        </Button>
+        <div class="grid gap-4 p-2">
+          <input type="text" id="1" class="border" autofocus />
+          <input type="text" id="2" class="border" />
+          <input type="text" id="3" class="border" />
+          <Modal>
+            <div slot="title">Test 2</div>
+            <Button slot="trigger" class="aui-button p-2 outline">
+              Modal 2
+            </Button>
+            <div class="grid gap-4 p-2">zzzzz</div>
+          </Modal>
+        </div>
+      </Modal>
+      <Modal position="right">
+        <div slot="title">Test <b>title</b></div>
+        <Button slot="trigger" class="aui-button p-2 outline">
+          Modal (right)
+        </Button>
+        <div class="grid gap-4 p-2">
+          <p>zzzz</p>
+          <p>zzzz</p>
+          <p>zzzz</p>
+        </div>
+      </Modal>
+      <Modal position="left">
+        <div slot="title">Test <b>title</b></div>
+        <Button slot="trigger" class="aui-button p-2 outline">
+          Modal (left)
+        </Button>
+        <div class="grid gap-4 p-2">
+          <p>zzzz</p>
+          <p>zzzz</p>
+          <p>zzzz</p>
+        </div>
+      </Modal>
+      <Dropdown>
+        <Button slot="trigger" class="aui-button p-2 outline">Dropdown</Button>
+        <div class="grid p-1">
+          <a href="#" class="aui-button p-2">might shake pass hungry vowel</a>
+          <a href="#" class="aui-button p-2">trail alike lying song hung</a>
+          <a href="#" class="aui-button p-2">liquid stone area somebody</a>
+          <a href="#" class="aui-button p-2">
+            wire citizen faster buy electric
+          </a>
+          <a href="#" class="aui-button p-2">statement back largest</a>
+        </div>
+      </Dropdown>
+    </div>
 
-      <hr />
+    <hr />
 
-      <p>asdasdasd</p>
-   </div>
+    <div class="flex items-center gap-4">
+      <Button class="px-2 py-1">button</Button>
+      <Button is="ghost" class="px-2 py-1">is ghost</Button>
+      <Button is="primary" class="px-2 py-1">is primary</Button>
+      <Button href="/" class="px-2 py-1">a href</Button>
+    </div>
+  </div>
 </Layout>

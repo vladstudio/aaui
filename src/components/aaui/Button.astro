@@ -1,0 +1,23 @@
+---
+import {Theme} from "./Theme.js"
+const props = Astro.props
+const is = props.is ? props.is : "default" // default, primary, ghost
+delete props.is
+props.class = [
+  Theme.button.common,
+  Theme.button[is],
+  props.class ? props.class : "",
+].join(" ")
+---
+
+{
+  props.href ? (
+    <a {...props}>
+      <slot />
+    </a>
+  ) : (
+    <button {...props}>
+      <slot />
+    </button>
+  )
+}
