@@ -18,7 +18,9 @@ import Dropdown from "@components/aaui/Dropdown.astro"
         <Icon name="ph:arrow-right-bold" size={16} class="text-orange-500" />
         load partial from server
       </Button>
-      <div id="tgt-1" class="bg-stone-100 px-2 py-1" x-merge.transition>target</div>
+      <div id="tgt-1" class="bg-stone-100 px-2 py-1" x-merge.transition>
+        target
+      </div>
       <Button
         href="/partials/test-modal"
         x-target="teleport"
@@ -81,7 +83,8 @@ import Dropdown from "@components/aaui/Dropdown.astro"
           <Button is="ghost" href="#" class="px-2 py-1">
             wire citizen faster buy
           </Button>
-          <Button is="ghost" href="#" class="px-2 py-1">statement back largest</Button
+          <Button is="ghost" href="#" class="px-2 py-1"
+            >statement back largest</Button
           >
         </div>
       </Dropdown>
