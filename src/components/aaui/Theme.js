@@ -1,4 +1,5 @@
 export const Theme = {
+  link: "rounded-sm underline decoration-orange-400/50 underline-offset-2 outline-2 outline-offset-0 hover:bg-orange-200/40 hover:outline hover:outline-orange-200/40",
   button: {
     common: "border rounded transition-all duration-75",
     default:
@@ -18,11 +19,19 @@ export const Theme = {
 }
 
 export const Transitions = {
+  dropdown: {
+    "x-transition:enter": "transition duration-150 ease-out",
+    "x-transition:enter-start": "opacity-0 translate-y-2",
+    "x-transition:enter-end": "opacity-100 translate-y-0",
+    "x-transition:leave": "transition duration-150 ease-in",
+    "x-transition:leave-start": "opacity-100 translate-y-0",
+    "x-transition:leave-end": "opacity-0 translate-y-2",
+  },
   backdrop: {
-    "x-transition:enter": "transition duration-150",
+    "x-transition:enter": "transition duration-150 ease-out",
     "x-transition:enter-start": "opacity-0",
     "x-transition:enter-end": "opacity-100",
-    "x-transition:leave": "transition duration-150",
+    "x-transition:leave": "transition duration-150 ease-in",
     "x-transition:leave-start": "opacity-100",
     "x-transition:leave-end": "opacity-0",
   },

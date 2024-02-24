@@ -20,7 +20,7 @@ select {
 }
 html,
 body {
-  @apply bg-stone-100 font-sans leading-relaxed antialiased;
+  @apply bg-stone-50 font-sans leading-relaxed antialiased;
   text-rendering: geometricPrecision;
 }
 [x-cloak] {

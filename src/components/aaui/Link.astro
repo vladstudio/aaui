@@ -1,0 +1,9 @@
+---
+import {Theme} from "./Theme.js"
+const props = Astro.props
+props.class = [Theme.link, props.class ? props.class : ""].join(" ")
+---
+
+<a {...props}>
+  <slot />
+</a>
