@@ -11,11 +11,6 @@
         "kind": "build",
         "isDefault": true
       }
-    },
-    {
-      "label": "Git Graph autostart",
-      "command": "${command:git-graph.view} && ${command:workbench.action.pinEditor}",
-      "runOptions": {"runOn": "folderOpen"}
     }
   ]
 }
