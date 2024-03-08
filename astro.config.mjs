@@ -7,13 +7,18 @@ import icon from "astro-icon"
 
 // https://astro.build/config
 export default defineConfig({
+  prefetch: true,
   output: "server",
   adapter: node({
     mode: "standalone",
   }),
   integrations: [
     tailwind(),
-    icon(),
+    icon({
+			include: {
+				ph: ['x-bold', 'arrow-right-bold'],
+			}
+		}),
     alpine({
       entrypoint: "/entry/alpine",
     }),

@@ -1,12 +1,26 @@
 {
   "extends": "astro/tsconfigs/base",
   "compilerOptions": {
-    "lib": ["dom", "dom.iterable", "es2019"],
-    "downlevelIteration": true,
     "baseUrl": ".",
     "paths": {
       "@components/*": ["src/components/*"],
       "@layouts/*": ["src/layouts/*"]
-    }
+    },
+    // bun
+    "types": ["bun-types"],
+
+    // latest features
+    "lib": ["ESNext", "dom", "dom.iterable", "es2019"],
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleDetection": "force",
+    "jsx": "react-jsx",
+    "allowJs": true,
+    
+    // best practices
+    "strict": true,
+    "skipLibCheck": true,
+    "noFallthroughCasesInSwitch": true,
+    "downlevelIteration": true
   }
 }
