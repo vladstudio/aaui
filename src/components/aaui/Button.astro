@@ -1,11 +1,13 @@
 ---
 import {Theme} from "./Theme.js"
 const props = Astro.props
-const is = props.is || "default" // see Theme.js
+const is = props.is || "default" // default, primary, ghost; see Theme.js
 delete props.is
 props.class = [
   Theme.button.common,
-  Theme.button[is],
+  is == 'default' && Theme.button.default,
+  is == 'primary' && Theme.button.primary,
+  is == 'ghost' && Theme.button.ghost,
   props.class || null,
 ].join(" ")
 ---

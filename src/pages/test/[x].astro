@@ -1,16 +1,26 @@
 ---
-import Layout from "@layouts/Layout.astro"
 const {x} = Astro.params
+import Layout from "@layouts/Layout.astro"
+import {Image} from "astro:assets"
+import testImage from "/src/assets/images/test.jpg"
+// export const prerender = true
 ---
 
 <Layout title="Welcome to Astro.">
   <div class="grid gap-8 p-8">
-    <h1>test</h1>
+    <h1>remote image</h1>
     <img
       src="https://placehold.co/200x300"
       width={200}
       height={300}
       alt="kitten"
+    />
+    <h1>local image</h1>
+    <Image
+      src={testImage}
+      width={200}
+      height={200}
+      alt="A bird sitting on a nest of eggs."
     />
     x = {x}
   </div>
