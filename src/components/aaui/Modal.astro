@@ -19,13 +19,18 @@ const layout =
 
 props.class = [
   Theme.modal.common,
-  is == 'center' && Theme.modal.center,
-  is == 'right' && Theme.modal.right,
   is == 'left' && Theme.modal.left,
+  is == 'right' && Theme.modal.right,
+  is == 'center' && Theme.modal.center,
   "z-50 w-full",
   layout,
   props.class || null,
 ].join(" ")
+
+const transitions = 
+  is == 'left' ? Transitions.modal.left :
+  is == 'right' ? Transitions.modal.right :
+  Transitions.modal.center
 ---
 
 <div
@@ -64,7 +69,7 @@ props.class = [
       <!-- panel -->
       <div
         {...props}
-        {...Transitions.modal[is]}
+        {...transitions}
         :id="$id('modal')"
         @click.stop
         x-show="open"
