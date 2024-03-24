@@ -1,0 +1,15 @@
+---
+import Layout from "@layouts/Layout.astro"
+import {Icon} from "astro-icon/components"
+
+import PocketBase from "pocketbase"
+const pb = new PocketBase("http://127.0.0.1:8090")
+const list = await pb.collection("test").getFullList()
+---
+
+<Layout title="Hi hi">
+  <div x-init x-data="{}" class="grid w-full gap-4 p-4">
+    <h3>PocketBase</h3>
+    <pre class="whitespace-pre-wrap border p-4">{JSON.stringify(list)}</pre>
+  </div>
+</Layout>
