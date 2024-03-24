@@ -1,5 +1,5 @@
 ---
-import {Theme, Transitions} from "./Theme.js"
+import Theme from "./Theme.js"
 import Button from "./Button.astro"
 import {Icon} from "astro-icon/components"
 
@@ -28,9 +28,9 @@ props.class = [
 ].join(" ")
 
 const transitions = 
-  is == 'left' ? Transitions.modal.left :
-  is == 'right' ? Transitions.modal.right :
-  Transitions.modal.center
+  is == 'left' ? Theme.transitions.modal.left :
+  is == 'right' ? Theme.transitions.modal.right :
+  Theme.transitions.modal.center
 ---
 
 <div
@@ -64,7 +64,7 @@ const transitions =
           "fixed bottom-0 left-0 right-0 top-0 z-50",
         ].join(" ")}
         x-show="open"
-        {...Transitions.backdrop}>
+        {...Theme.transitions.backdrop}>
       </div>
       <!-- panel -->
       <div

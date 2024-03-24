@@ -1,5 +1,5 @@
 ---
-import {Theme, Transitions} from "./Theme.js"
+import Theme from "./Theme.js"
 const props = Astro.props
 props.class = [Theme.dropdown, "z-40", props.class || null].join(" ")
 ---
@@ -10,7 +10,7 @@ props.class = [Theme.dropdown, "z-40", props.class || null].join(" ")
   </span>
   <div
     {...props}
-    {...Transitions.dropdown}
+    {...Theme.transitions.dropdown}
     x-anchor.bottom-start.offset.5="$refs.trigger"
     x-cloak
     x-show.important="open"
