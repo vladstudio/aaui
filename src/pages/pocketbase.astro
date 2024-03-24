@@ -9,7 +9,13 @@ const list = await pb.collection("test").getFullList()
 
 <Layout title="Hi hi">
   <div x-init x-data="{}" class="grid w-full gap-4 p-4">
-    <h3>PocketBase</h3>
+    <h3>list:</h3>
     <pre class="whitespace-pre-wrap border p-4">{JSON.stringify(list)}</pre>
+    <!-- <h3>auth:</h3>
+    <pre class="whitespace-pre-wrap border p-4">{JSON.stringify(auth)}</pre>
+    <h3>pb.authStore.isValid:</h3>
+    <pre class="whitespace-pre-wrap border p-4">{JSON.stringify(pb.authStore.isValid)}</pre>
+    <h3>pb.authStore.token:</h3>
+    <pre class="whitespace-pre-wrap border p-4">{JSON.stringify(pb.authStore.token)}</pre> -->
   </div>
 </Layout>

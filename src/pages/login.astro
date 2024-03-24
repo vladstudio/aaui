@@ -1,0 +1,7 @@
+---
+await Astro.locals.pb
+  .collection("users")
+  .authWithPassword("vlad@vlad.studio", "1234567890")
+
+return Astro.redirect("/")
+---

@@ -22,4 +22,21 @@ const path = Astro.url.pathname
     href="/pocketbase">
     Pocketbase
   </Link>
+  <Link
+    tabindex="0"
+    class={`underline ${path === "/locals" ? "!bg-pink-100" : ""}`}
+    href="/locals">
+    Locals
+  </Link>
+  <div class="flex-1"></div>
+  <Link
+    tabindex="0"
+    href="/login">
+    Login
+  </Link>
+  <Link
+    tabindex="0"
+    href="/logout">
+    Logout
+  </Link>
 </div>
