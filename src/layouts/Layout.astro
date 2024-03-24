@@ -4,6 +4,7 @@ import "@fontsource-variable/public-sans"
 const {title} = Astro.props
 import "@components/aaui/Theme.css"
 import {ViewTransitions, fade} from "astro:transitions"
+import Theme from "@components/aaui/Theme"
 ---
 
 <!doctype html>
@@ -17,7 +18,7 @@ import {ViewTransitions, fade} from "astro:transitions"
     <title>{title}</title>
   </head>
   <ViewTransitions />
-  <body transition:animate={fade({duration: "150ms"})}>
+  <body transition:animate={fade(Theme.transitions.body)}>
     <Nav />
     <slot />
     <div id="teleport"></div>
