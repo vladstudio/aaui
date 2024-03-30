@@ -2,7 +2,6 @@
 const {x} = Astro.params
 import Layout from "@layouts/Layout.astro"
 import {Image} from "astro:assets"
-import testImage from "/src/assets/images/test.jpg"
 ---
 
 <Layout title="Welcome to Astro.">
@@ -16,11 +15,13 @@ import testImage from "/src/assets/images/test.jpg"
     />
     <h1>local image</h1>
     <Image
-      src={testImage}
+      src="/images/test.jpg"
       width={200}
       height={200}
       alt="A bird sitting on a nest of eggs."
     />
-    <div class="">url param = <code class="bg-stone-200 px-1 rounded">{x}</code></div>
+    <div class="">
+      url param = <code class="rounded bg-stone-200 px-1">{x}</code>
+    </div>
   </div>
 </Layout>
