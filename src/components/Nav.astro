@@ -28,6 +28,12 @@ const path = Astro.url.pathname
     href="/locals">
     Locals
   </Link>
+  <Link
+    tabindex="0"
+    class={`underline ${path === "/wysimark" ? "!bg-pink-100" : ""}`}
+    href="/wysimark">
+    Wysimark
+  </Link>
   <div class="flex-1"></div>
   <Link
     tabindex="0"
