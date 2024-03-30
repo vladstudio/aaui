@@ -9,16 +9,17 @@ import icon from "astro-icon"
 export default defineConfig({
   prefetch: true,
   output: "server",
+  server: {port: 8002},
   adapter: node({
     mode: "standalone",
   }),
   integrations: [
     tailwind(),
     icon({
-			include: {
-				ph: ['x-bold', 'arrow-right-bold'],
-			}
-		}),
+      include: {
+        ph: ["x-bold", "arrow-right-bold"],
+      },
+    }),
     alpine({
       entrypoint: "/entry/alpine",
     }),
