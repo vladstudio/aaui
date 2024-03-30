@@ -22,3 +22,6 @@ pnpm-debug.log*
 
 # bun
 bun.lockb
+
+# sqlite
+db/*

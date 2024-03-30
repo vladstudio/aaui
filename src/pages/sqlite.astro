@@ -1,0 +1,14 @@
+---
+import Layout from "@layouts/Layout.astro"
+const db = Astro.locals.db
+const query = db.query(`select * from test`)
+const all = query.all()
+---
+
+<Layout title="Hi hi">
+  <div class="p-4">
+    <pre>
+      <code class="block break-all whitespace-pre-wrap max-w-xl border border-stone-300 p-2">{JSON.stringify(all)}</code>
+    </pre>
+  </div>
+</Layout>
