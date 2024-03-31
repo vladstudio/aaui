@@ -1,0 +1,13 @@
+---
+import Layout from "@layouts/Layout.astro"
+const pb = Astro.locals.pb
+const list = await pb.collection("test").getFullList()
+---
+
+<Layout title="Hi hi">
+  <div class="p-4">
+    <pre>
+      <code class="block break-all whitespace-pre-wrap max-w-xl border border-stone-300 p-2">{JSON.stringify(list)}</code>
+    </pre>
+  </div>
+</Layout>

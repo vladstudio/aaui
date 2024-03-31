@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "dev": "/home/vlad/pocketbase/pocketbase serve --http=127.0.0.1:8102 --dir=/srv/aaui/pb_data & bunx --bun astro dev",
+    "dev": "/Users/vlad/Pocketbase/pocketbase serve --http=127.0.0.1:8102 --dir=/Users/vlad/Git/aaui/pb_data & bunx --bun astro dev",
     "start": "bunx --bun astro dev",
     "build": "bunx --bun astro build",
     "preview": "bunx --bun astro preview",
