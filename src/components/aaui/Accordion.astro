@@ -1,7 +1,7 @@
 ---
-import Theme from "./Theme.js"
+import aauiTheme from "./aauiTheme.js"
 const props = Astro.props
-props.class = [Theme.accordion, props.class || null].join(" ")
+props.class = [aauiTheme.accordion, props.class || null].join(" ")
 ---
 
 <div x-data="{ activeAccordion: 0 }">

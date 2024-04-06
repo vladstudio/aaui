@@ -1,4 +1,4 @@
-const Theme = {
+const aauiTheme = {
   link: "rounded-sm underline decoration-orange-400/50 underline-offset-2 outline-2 outline-offset-0 hover:bg-orange-200/40 hover:outline hover:outline-orange-200/40",
   button: {
     common: "border rounded transition-all duration-75",
@@ -68,4 +68,4 @@ const Theme = {
   },
 }
 
-export default Theme
+export default aauiTheme

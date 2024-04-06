@@ -1,10 +1,10 @@
 ---
-import Theme from "./Theme.js"
+import aauiTheme from "./aauiTheme.js"
 import Button from "./Button.astro"
 import {Icon} from "astro-icon/components"
 
 const props = Astro.props
-const is = props.is || "center" // center, left, right; see Theme.js
+const is = props.is || "center" // center, left, right; see aauiTheme.js
 delete props.is
 const immediate = props.immediate || null
 delete props.immediate
@@ -18,19 +18,19 @@ const layout =
         "mx-auto grid sm:mb-[20dvh]"
 
 props.class = [
-  Theme.modal.common,
-  is == 'left' && Theme.modal.left,
-  is == 'right' && Theme.modal.right,
-  is == 'center' && Theme.modal.center,
+  aauiTheme.modal.common,
+  is == 'left' && aauiTheme.modal.left,
+  is == 'right' && aauiTheme.modal.right,
+  is == 'center' && aauiTheme.modal.center,
   "z-50 w-full",
   layout,
   props.class || null,
 ].join(" ")
 
 const transitions = 
-  is == 'left' ? Theme.transitions.modal.left :
-  is == 'right' ? Theme.transitions.modal.right :
-  Theme.transitions.modal.center
+  is == 'left' ? aauiTheme.transitions.modal.left :
+  is == 'right' ? aauiTheme.transitions.modal.right :
+  aauiTheme.transitions.modal.center
 ---
 
 <div
@@ -60,11 +60,11 @@ const transitions =
       <!-- backdrop -->
       <div
         class={[
-          Theme.backdrop,
+          aauiTheme.backdrop,
           "fixed bottom-0 left-0 right-0 top-0 z-50",
         ].join(" ")}
         x-show="open"
-        {...Theme.transitions.backdrop}>
+        {...aauiTheme.transitions.backdrop}>
       </div>
       <!-- panel -->
       <div

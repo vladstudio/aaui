@@ -1,13 +1,13 @@
 ---
-import Theme from "./Theme.js"
+import aauiTheme from "./aauiTheme.js"
 const props = Astro.props
-const is = props.is || "default" // default, primary, ghost; see Theme.js
+const is = props.is || "default" // default, primary, ghost; see aauiTheme.js
 delete props.is
 props.class = [
-  Theme.button.common,
-  is == 'default' && Theme.button.default,
-  is == 'primary' && Theme.button.primary,
-  is == 'ghost' && Theme.button.ghost,
+  aauiTheme.button.common,
+  is == 'default' && aauiTheme.button.default,
+  is == 'primary' && aauiTheme.button.primary,
+  is == 'ghost' && aauiTheme.button.ghost,
   props.class || null,
 ].join(" ")
 ---

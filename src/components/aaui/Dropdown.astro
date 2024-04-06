@@ -1,7 +1,7 @@
 ---
-import Theme from "./Theme.js"
+import aauiTheme from "./aauiTheme.js"
 const props = Astro.props
-props.class = [Theme.dropdown, "z-40", props.class || null].join(" ")
+props.class = [aauiTheme.dropdown, "z-40", props.class || null].join(" ")
 ---
 
 <div x-id="['dropdown']" x-data="{open: false}">
@@ -10,7 +10,7 @@ props.class = [Theme.dropdown, "z-40", props.class || null].join(" ")
   </span>
   <div
     {...props}
-    {...Theme.transitions.dropdown}
+    {...aauiTheme.transitions.dropdown}
     x-anchor.bottom-start.offset.5="$refs.trigger"
     x-cloak
     x-show.important="open"

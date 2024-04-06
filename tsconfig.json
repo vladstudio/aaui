@@ -1,3 +1,4 @@
+/// <reference path="path/types.d.ts" />
 {
   "extends": "astro/tsconfigs/base",
   "compilerOptions": {
@@ -5,9 +6,8 @@
     "paths": {
       "@components/*": ["src/components/*"],
       "@layouts/*": ["src/layouts/*"],
-      "@assets/*": ["src/assets/*"],
-      "@utils/*": ["src/utils/*"]
     },
+    
     // bun
     "types": ["bun-types"],
 
@@ -18,9 +18,9 @@
     "moduleDetection": "force",
     "jsx": "react-jsx",
     "allowJs": true,
-    
+
     // best practices
-    "strict": true,
+    // "strict": true,
     "skipLibCheck": true,
     "noFallthroughCasesInSwitch": true,
     "downlevelIteration": true

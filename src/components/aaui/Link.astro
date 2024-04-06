@@ -1,7 +1,7 @@
 ---
-import Theme from "./Theme.js"
+import aauiTheme from "./aauiTheme.js"
 const props = Astro.props
-props.class = [Theme.link, props.class || null].join(" ")
+props.class = [aauiTheme.link, props.class || null].join(" ")
 ---
 
 <a {...props}>
