@@ -17,7 +17,7 @@ export default defineConfig({
     tailwind(),
     icon({
       include: {
-        ph: ["x-bold", "arrow-right-bold"],
+        tabler: ["x", "arrow-right"],
       },
     }),
     alpine({
