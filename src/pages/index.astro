@@ -17,19 +17,13 @@ import Accordion from "@components/aaui/Accordion.astro"
         x-target="tgt-1"
         class="inline-flex items-center gap-2 px-2 py-1">
         <Icon name="tabler:arrow-right" size={16} class="text-orange-500" />
-        load partial from server
+        load partial 1 from server
       </Button>
       <div id="tgt-1" class="bg-stone-100 px-2 py-1" x-merge.transition>
-        target
+        target 1
       </div>
-      <Button
-        href="/partials/test-modal"
-        x-target="teleport"
-        class="inline-flex items-center gap-2 px-2 py-1">
-        load modal from server
-      </Button>
     </div>
-    
+
     <hr />
 
     <div class="grid items-center gap-4 sm:flex">
@@ -70,9 +64,16 @@ import Accordion from "@components/aaui/Accordion.astro"
           <p>zzzz</p>
         </div>
       </Modal>
+      <Button
+        href="/partials/test-modal"
+        x-target="modal-from-server-1"
+        class="inline-flex items-center gap-2 px-2 py-1">
+        Modal from server
+      </Button>
+      <div id="modal-from-server-1"></div>
       <Dropdown>
         <Button slot="trigger" class="px-2 py-1">Dropdown</Button>
-        <div class="grid p-1">
+        <div class="grid gap-1 p-1">
           <Button is="ghost" href="#" class="px-2 py-1"
             >might shake pass hungry vowel</Button
           >
@@ -88,6 +89,16 @@ import Accordion from "@components/aaui/Accordion.astro"
           <Button is="ghost" href="#" class="px-2 py-1"
             >statement back largest</Button
           >
+          <Button
+            href="/partials/clicked/?id=tgt-2"
+            x-target="tgt-2"
+            class="inline-flex items-center gap-2 px-2 py-1">
+            <Icon name="tabler:arrow-right" size={16} class="text-orange-500" />
+            load partial 2 from server
+          </Button>
+          <div id="tgt-2" class="bg-stone-100 px-2 py-1" x-merge.transition>
+            target 2
+          </div>
         </div>
       </Dropdown>
     </div>
@@ -101,10 +112,10 @@ import Accordion from "@components/aaui/Accordion.astro"
       <Button href="/" class="px-2 py-1">a href</Button>
     </div>
 
-     <hr />
+    <hr />
 
-     <div class="w-80">
-       <Accordion />
-     </div>
+    <div class="w-80">
+      <Accordion />
+    </div>
   </div>
 </Layout>
