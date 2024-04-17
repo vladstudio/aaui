@@ -1,5 +1,7 @@
 const aauiTheme = {
   link: "rounded-sm underline decoration-orange-400/50 underline-offset-2 outline-2 outline-offset-0 hover:bg-orange-200/40 hover:outline hover:outline-orange-200/40",
+  input:
+    "flex w-full items-center rounded border border-stone-400 bg-white px-4 py-2 font-sans font-medium shadow-[inset_0_3px_0_0_rgba(0,0,0,0.03)] placeholder:font-normal placeholder:text-stone-400",
   button: {
     common: "border rounded transition-all duration-75",
     default:
