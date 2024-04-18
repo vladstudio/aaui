@@ -1,0 +1,7 @@
+---
+import aauiTheme from "./aauiTheme.js"
+const props = Astro.props
+props.class = [aauiTheme.input, props.class || null].filter(Boolean).join(" ")
+---
+
+<textarea {...props} />

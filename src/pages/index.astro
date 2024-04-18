@@ -9,7 +9,7 @@ import Accordion from "@components/aaui/Accordion.astro"
 ---
 
 <Layout title="Hi hi">
-  <div x-init x-data="{}" class="grid w-full gap-4 p-4">
+  <div x-init x-data="{}" class="mx-auto grid max-w-2xl gap-4 p-4">
     <!-- ajax -->
     <div class="grid items-stretch gap-4 sm:flex">
       <Button
@@ -66,11 +66,11 @@ import Accordion from "@components/aaui/Accordion.astro"
       </Modal>
       <Button
         href="/partials/test-modal"
-        x-target="modal-from-server-1"
+        x-target="teleport"
+        x-merge="after"
         class="inline-flex items-center gap-2 px-2 py-1">
         Modal from server
       </Button>
-      <div id="modal-from-server-1"></div>
       <Dropdown>
         <Button slot="trigger" class="px-2 py-1">Dropdown</Button>
         <div class="grid gap-1 p-1">
