@@ -5,11 +5,13 @@ const is = props.is || "default" // default, primary, ghost; see aauiTheme.js
 delete props.is
 props.class = [
   aauiTheme.button.common,
-  is == 'default' && aauiTheme.button.default,
-  is == 'primary' && aauiTheme.button.primary,
-  is == 'ghost' && aauiTheme.button.ghost,
+  is === "default" && aauiTheme.button.default,
+  is === "primary" && aauiTheme.button.primary,
+  is === "ghost" && aauiTheme.button.ghost,
   props.class || null,
-].join(" ")
+]
+  .filter(Boolean)
+  .join(" ")
 ---
 
 {

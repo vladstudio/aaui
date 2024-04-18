@@ -1,7 +1,9 @@
 ---
 import aauiTheme from "./aauiTheme.js"
 const props = Astro.props
-props.class = [aauiTheme.accordion, props.class || null].join(" ")
+props.class = [aauiTheme.accordion, props.class || null]
+  .filter(Boolean)
+  .join(" ")
 ---
 
 <div x-data="{ activeAccordion: 0 }">
@@ -14,9 +16,7 @@ props.class = [aauiTheme.accordion, props.class || null].join(" ")
     </button>
 
     <div x-cloak x-collapse x-show="activeAccordion === 0">
-      <div>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
-      </div>
+      <div>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</div>
     </div>
   </div>
 
@@ -31,7 +31,7 @@ props.class = [aauiTheme.accordion, props.class || null].join(" ")
     <div x-cloak x-collapse x-show="activeAccordion === 1">
       <div>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint, officia
-        maiores. 
+        maiores.
       </div>
     </div>
   </div>

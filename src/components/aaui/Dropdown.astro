@@ -1,7 +1,9 @@
 ---
 import aauiTheme from "./aauiTheme.js"
 const props = Astro.props
-props.class = [aauiTheme.dropdown, "z-40", props.class || null].join(" ")
+props.class = [aauiTheme.dropdown, "z-40", props.class || null]
+  .filter(Boolean)
+  .join(" ")
 ---
 
 <div x-id="['dropdown']" x-data="{open: false}">

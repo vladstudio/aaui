@@ -10,27 +10,31 @@ const immediate = props.immediate || null
 delete props.immediate
 
 const layout =
-  is == "left"
+  is === "left"
     ? "fixed top-0 bottom-0 left-0"
-    : is == "right"
+    : is === "right"
       ? "fixed top-0 bottom-0 right-0"
       : // center
         "mx-auto grid sm:mb-[20dvh]"
 
 props.class = [
   aauiTheme.modal.common,
-  is == 'left' && aauiTheme.modal.left,
-  is == 'right' && aauiTheme.modal.right,
-  is == 'center' && aauiTheme.modal.center,
+  is === "left" && aauiTheme.modal.left,
+  is === "right" && aauiTheme.modal.right,
+  is === "center" && aauiTheme.modal.center,
   "z-50 w-full",
   layout,
   props.class || null,
-].join(" ")
+]
+  .filter(Boolean)
+  .join(" ")
 
-const transitions = 
-  is == 'left' ? aauiTheme.transitions.modal.left :
-  is == 'right' ? aauiTheme.transitions.modal.right :
-  aauiTheme.transitions.modal.center
+const transitions =
+  is === "left"
+    ? aauiTheme.transitions.modal.left
+    : is === "right"
+      ? aauiTheme.transitions.modal.right
+      : aauiTheme.transitions.modal.center
 ---
 
 <div
@@ -59,10 +63,9 @@ const transitions =
       x-show="open">
       <!-- backdrop -->
       <div
-        class={[
-          aauiTheme.backdrop,
-          "fixed bottom-0 left-0 right-0 top-0 z-50",
-        ].join(" ")}
+        class={[aauiTheme.backdrop, "fixed bottom-0 left-0 right-0 top-0 z-50"]
+          .filter(Boolean)
+          .join(" ")}
         x-show="open"
         {...aauiTheme.transitions.backdrop}>
       </div>

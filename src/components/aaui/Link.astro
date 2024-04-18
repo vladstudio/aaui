@@ -1,7 +1,10 @@
 ---
 import aauiTheme from "./aauiTheme.js"
 const props = Astro.props
-props.class = [aauiTheme.link, props.class || null].join(" ")
+props.class = [aauiTheme.link, props.class || null]
+  .filter(Boolean)
+  .filter(Boolean)
+  .join(" ")
 ---
 
 <a {...props}>
