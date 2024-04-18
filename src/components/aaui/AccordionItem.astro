@@ -1,0 +1,18 @@
+---
+import aauiTheme from "./aauiTheme.js"
+const props = Astro.props
+const id = crypto.randomUUID()
+const title = props.title
+delete props.title
+---
+
+<div {...props}>
+  <button
+    @click={`activeItem = activeItem === "${id}" ? false : "${id}"`}
+    :class={`{"text-indigo-600": activeItem === "${id}"}`}
+    class="underline"
+    set:html={title}
+  />
+
+  <div x-cloak x-collapse x-show={`activeItem === "${id}"`}><slot /></div>
+</div>

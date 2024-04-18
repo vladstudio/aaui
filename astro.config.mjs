@@ -1,7 +1,7 @@
 import {defineConfig} from "astro/config"
 import node from "@astrojs/node"
 import tailwind from "@astrojs/tailwind"
-import alpine from "@astrojs/alpinejs"
+import alpinejs from "@astrojs/alpinejs"
 
 import icon from "astro-icon"
 
@@ -20,8 +20,8 @@ export default defineConfig({
         tabler: ["x", "arrow-right"],
       },
     }),
-    alpine({
-      entrypoint: "/entry/alpine",
+    alpinejs({
+      entrypoint: "/entry/alpinejs",
     }),
   ],
   image: {

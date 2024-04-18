@@ -1,27 +1,11 @@
 ---
 import aauiTheme from "./aauiTheme.js"
 const props = Astro.props
-props.class = [aauiTheme.accordion.box, props.class || null]
+props.class = [aauiTheme.accordion, props.class || null]
   .filter(Boolean)
   .join(" ")
-const data = [1, 2]
-delete props.data
 ---
 
 <div x-data="{ activeItem: 0 }">
-  {data.map((x, i)=>(
-    <div {...props}>
-      <button
-        @click={ `activeItem = activeItem === ${i} ? false : ${i}` }
-        :class={ `{"text-indigo-600": activeItem === ${i}}` }
-        class="underline">
-        zzz
-      </button>
-  
-      <div x-cloak x-collapse x-show={`activeItem === ${i}`}>
-        sss
-      </div>
-    </div>
-  ))}
-
+  <slot />
 </div>
