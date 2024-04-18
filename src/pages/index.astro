@@ -6,6 +6,7 @@ import Button from "@components/aaui/Button.astro"
 import Modal from "@components/aaui/Modal.astro"
 import Dropdown from "@components/aaui/Dropdown.astro"
 import Accordion from "@components/aaui/Accordion.astro"
+import Input from "@components/aaui/Input.astro"
 ---
 
 <Layout title="Hi hi">
@@ -31,9 +32,9 @@ import Accordion from "@components/aaui/Accordion.astro"
         <div slot="title">Test <b>title</b></div>
         <Button slot="trigger" class="px-2 py-1"> Modal </Button>
         <div class="grid gap-4 p-2">
-          <input type="text" id="1" class="border" autofocus />
-          <input type="text" id="2" class="border" />
-          <input type="text" id="3" class="border" />
+          <Input type="text" id="1" class="border" autofocus />
+          <Input type="text" id="2" class="border" />
+          <Input type="text" id="3" class="border" />
           <Modal>
             <div slot="title">Test 2</div>
             <Button slot="trigger" class="px-2 py-1"> Modal 2 </Button>
