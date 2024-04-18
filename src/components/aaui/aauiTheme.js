@@ -20,7 +20,7 @@ const aauiTheme = {
     left: "border-r",
   },
   accordion: {
-    box: "grid bg-pink-200/20",
+    box: "grid place-items-start bg-pink-200/20",
     trigger: "px-4 py-2 border-stone-200 bg-pink-200/20 hover:bg-pink-200/40",
     panel: "px-4 py-2 border-stone-200",
   },
