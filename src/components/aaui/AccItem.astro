@@ -1,0 +1,19 @@
+---
+import aauiTheme from "./aauiTheme.js"
+const props = Astro.props
+const id = crypto.randomUUID().toString()
+const title = props.title
+delete props.title
+const isActive = !!props.isActive
+delete props.isActive
+---
+
+<div x-init={isActive ? `activeAccItem = "${id}"` : ``} {...props}>
+  <button
+    @click={`activeAccItem = (activeAccItem === "${id}" ? false : "${id}")`}
+    :class={`activeAccItem === "${id}" ? "${aauiTheme.accordionItem.titleIsActive}" : "${aauiTheme.accordionItem.title}"`}
+    set:html={title}
+  />
+
+  <div x-cloak x-collapse x-show={`activeAccItem === "${id}"`}><slot /></div>
+</div>

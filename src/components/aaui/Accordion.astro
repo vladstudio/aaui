@@ -1,11 +1,7 @@
 ---
 import aauiTheme from "./aauiTheme.js"
-const props = Astro.props
-props.class = [aauiTheme.accordion, props.class || null]
-  .filter(Boolean)
-  .join(" ")
 ---
 
-<div x-data="{ activeItem: 0 }">
+<div x-data="{ activeAccItem: null }">
   <slot />
 </div>

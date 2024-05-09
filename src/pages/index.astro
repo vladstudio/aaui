@@ -7,7 +7,7 @@ import Modal from "@components/aaui/Modal.astro"
 import Dropdown from "@components/aaui/Dropdown.astro"
 import Accordion from "@components/aaui/Accordion.astro"
 import Input from "@components/aaui/Input.astro"
-import AccordionItem from "@components/aaui/AccordionItem.astro"
+import AccItem from "@components/aaui/AccItem.astro"
 ---
 
 <Layout title="Hi hi">
@@ -118,10 +118,12 @@ import AccordionItem from "@components/aaui/AccordionItem.astro"
 
     <div class="w-80">
       <Accordion>
-        <AccordionItem title="Test <span class='text-orange-500'>Tag</span>"
-          >asdasdasdasdas</AccordionItem
+        <AccItem
+          isActive
+          title="Test <span class='text-orange-500'>Tag</span>"
+          >asdasdasdasdas</AccItem
         >
-        <AccordionItem title="Section 2">aqweqweqweqweqwe</AccordionItem>
+        <AccItem title="Section 2">aqweqweqweqweqwe</AccItem>
       </Accordion>
     </div>
   </div>

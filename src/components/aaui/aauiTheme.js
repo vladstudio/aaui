@@ -21,8 +21,10 @@ const aauiTheme = {
   },
   accordion: "grid place-items-start bg-pink-200/20",
   accordionItem: {
-    trigger: "px-4 py-2 border-stone-200 bg-pink-200/20 hover:bg-pink-200/40",
+    title: "px-4 py-2 border-stone-200 bg-pink-200/20 hover:bg-pink-200/40",
+    titleIsActive: "px-4 py-2 border-stone-200 bg-pink-200 hover:bg-pink-200/40",
     panel: "px-4 py-2 border-stone-200",
+    panelIsActive: "px-4 py-2 border-stone-200",
   },
 
   transitions: {
