@@ -3,8 +3,7 @@ import Nav from "@components/Nav.astro"
 import "@fontsource-variable/public-sans"
 const {title} = Astro.props
 import "src/css/css.css"
-import {ViewTransitions, fade} from "astro:transitions"
-import aauiTheme from "@components/aaui/aauiTheme"
+// import {ViewTransitions, fade} from "astro:transitions"
 ---
 
 <!doctype html>
@@ -17,8 +16,9 @@ import aauiTheme from "@components/aaui/aauiTheme"
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <ViewTransitions />
-  <body transition:animate={fade(aauiTheme.transitions.body)}>
+  <!-- <ViewTransitions /> -->
+  <body>
+  <!-- <body transition:animate={fade(aauiTheme.transitions.body)}> -->
     <Nav />
     <slot />
     <div id="teleport" x-merge="append"></div>
